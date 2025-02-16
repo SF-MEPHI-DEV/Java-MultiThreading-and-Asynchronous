@@ -1,6 +1,6 @@
 package ru.mephi.week1.lesson1;
 
-import java.util.Random;
+import java.util.*;
 
 public class Task1Solved {
 
@@ -42,7 +42,7 @@ public class Task1Solved {
                 try {
                     Thread.sleep(rand.nextInt(200) + 100);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
 
                 progress += rand.nextInt(10) + 1;
@@ -50,7 +50,7 @@ public class Task1Solved {
             }
 
             finishTimes[index] = System.currentTimeMillis();
-            System.out.println("\n🏁 " + name + " ФИНИШИРОВАЛ!");
+            System.out.println("\n " + name + " ФИНИШИРОВАЛ!");
         }
     }
 

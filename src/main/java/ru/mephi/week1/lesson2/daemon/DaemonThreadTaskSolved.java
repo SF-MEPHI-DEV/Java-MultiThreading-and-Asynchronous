@@ -55,7 +55,7 @@ public class DaemonThreadTaskSolved {
                     Thread.sleep(3000);
                     saveToFile();
                 } catch (InterruptedException e) {
-                    System.out.println("❌ Автосохранение прервано.");
+                    System.out.println("Автосохранение прервано.");
                     return;
                 }
             }
@@ -66,9 +66,9 @@ public class DaemonThreadTaskSolved {
                 for (String line : textBuffer) {
                     writer.write(line + "\n");
                 }
-                System.out.println("💾 Автосохранение выполнено! (autosave.txt)");
+                System.out.println("Автосохранение выполнено! (autosave.txt)");
             } catch (IOException e) {
-                System.out.println("⚠ Ошибка при сохранении файла: " + e.getMessage());
+                System.out.println("Ошибка при сохранении файла: " + e.getMessage());
             }
         }
     }
@@ -79,18 +79,18 @@ public class DaemonThreadTaskSolved {
         autoSaveThread.start();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("📝 Введите текст (для выхода введите 'exit'):");
+        System.out.println("Введите текст (для выхода введите 'exit'):");
 
         while (true) {
             String input = scanner.nextLine();
             if ("exit".equalsIgnoreCase(input)) {
-                System.out.println("✅ Завершение работы редактора...");
+                System.out.println("Завершение работы редактора...");
                 break;
             }
             textBuffer.add(input);
         }
 
-        System.out.println("📝 Ваш текст был сохранён в 'autosave.txt'. До встречи!");
+        System.out.println("Ваш текст был сохранён в 'autosave.txt'. До встречи!");
     }
 
 

@@ -4,7 +4,7 @@ public class ThreadPriorityExample {
 
     public static class MyThread extends Thread {
 
-        int counter;
+        long counter;
 
         public MyThread(String name, int priority) {
             super(name);
@@ -33,7 +33,7 @@ public class ThreadPriorityExample {
         minPriorityThread.start();
         maxPriorityThread.start();
 
-        Thread.sleep(500);
+        Thread.sleep(5000);
 
         minPriorityThread.interrupt();
         maxPriorityThread.interrupt();

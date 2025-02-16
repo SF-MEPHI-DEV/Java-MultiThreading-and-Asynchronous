@@ -1,4 +1,4 @@
-package ru.mephi.week2.lesson1.receCondition;
+package ru.mephi.week2.lesson1.raceCondition;
 
 public class TicketBookingExample {
 

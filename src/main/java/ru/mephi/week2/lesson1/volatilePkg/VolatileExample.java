@@ -1,4 +1,4 @@
-package ru.mephi.week2.lesson1.volatitle;
+package ru.mephi.week2.lesson1.volatilePkg;
 
 public class VolatileExample {
 
