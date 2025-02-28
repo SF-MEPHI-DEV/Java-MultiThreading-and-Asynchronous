@@ -2,7 +2,8 @@ package ru.mephi.week2.lesson1.volatilePkg;
 
 public class VolatileExample {
 
-    private static volatile boolean isJobDone = false;
+
+    private static boolean isJobDone = false;
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -19,7 +20,7 @@ public class VolatileExample {
 
         Thread watcherThread = new Thread(() -> {
             while (!isJobDone) {
-
+                Thread.yield();
             }
             System.out.println("Поток B обнаружил, что работа завершена!");
         });

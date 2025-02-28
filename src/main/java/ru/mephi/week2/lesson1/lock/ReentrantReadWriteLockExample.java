@@ -3,11 +3,11 @@ package ru.mephi.week2.lesson1.lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 class SharedData {
+
     private int value1 = 100;
     private int value2 = 200;
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
-    // Читаем данные с блокировкой чтения
     public void readValues() {
         lock.readLock().lock();
         try {
@@ -17,11 +17,10 @@ class SharedData {
         }
     }
 
-    // Обновляем данные с блокировкой записи
     public void updateValues() {
         lock.writeLock().lock();
         try {
-            System.out.println(Thread.currentThread().getName() + " обновляет данные...");
+            System.out.println(Thread.currentThread().getName() + " обновляет данные");
             value1 = 500;
             value2 = 600;
             System.out.println(Thread.currentThread().getName() + " обновил данные: value1=" + value1 + ", value2=" + value2);
@@ -40,21 +39,12 @@ public class ReentrantReadWriteLockExample {
         }
 
         new Thread(() -> {
-            try {
-                Thread.sleep(1000);
-                data.updateValues();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            data.updateValues();
         }, "Писатель").start();
 
         new Thread(() -> {
-            try {
-                Thread.sleep(2000);
-                data.readValues();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            data.readValues();
         }, "Читатель-новый").start();
+
     }
 }

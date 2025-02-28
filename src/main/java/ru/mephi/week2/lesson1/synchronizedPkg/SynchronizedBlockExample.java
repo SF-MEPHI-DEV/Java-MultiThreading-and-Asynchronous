@@ -3,8 +3,8 @@ package ru.mephi.week2.lesson1.synchronizedPkg;
 public class SynchronizedBlockExample {
 
     public static class OnlineStore {
-        private int userBalance = 100;
-        private int stockCount = 50;
+        private Integer userBalance = 100;
+        private Integer stockCount = 50;
 
         private final Object balanceLock = new Object();  // Блокировка для баланса
         private final Object stockLock = new Object();    // Блокировка для склада

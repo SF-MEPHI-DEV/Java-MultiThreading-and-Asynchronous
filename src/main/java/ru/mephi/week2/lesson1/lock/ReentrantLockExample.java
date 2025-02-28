@@ -15,10 +15,10 @@ class BankAccount {
 
     public boolean transfer(BankAccount target, double amount) {
         try {
-            if (lock.tryLock(1, TimeUnit.SECONDS)) { // Пробуем захватить блокировку
+            if (lock.tryLock(1, TimeUnit.SECONDS)) {
                 try {
-                    if (target.lock.tryLock(1, TimeUnit.SECONDS)) { // Пробуем заблокировать целевой аккаунт
-                        // Thread.sleep(1100);
+                    if (target.lock.tryLock(1, TimeUnit.SECONDS)) {
+                        Thread.sleep(1100);
                         try {
                             if (balance >= amount) {
                                 balance -= amount;

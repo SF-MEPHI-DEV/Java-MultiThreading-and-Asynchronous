@@ -24,10 +24,8 @@ public class SynchronizedListExample {
             Thread.sleep(10);
         }
 
-        synchronized (list) {
-            System.out.println(list);
-            System.out.println(list.size());
-        }
+        System.out.println(list);
+        System.out.println(list.size());
 
     }
 
